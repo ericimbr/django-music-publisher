@@ -122,7 +122,7 @@ SESSION_COOKIE_SECURE = not DEBUG
 SECURE_HSTS_SECONDS = 0 if DEBUG else 300
 SECURE_HSTS_PRELOAD = not DEBUG
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-# Honor the SECURE_SSL_REDIRECT env var (default False)
+# Honor SECURE_SSL_REDIRECT from env var (default False)
 SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', 'False').lower() in ('true', '1', 't')
 
 # The name of the publisher. Use no comma in the name!
