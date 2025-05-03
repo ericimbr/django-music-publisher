@@ -139,7 +139,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 # The name of the publisher. Use no comma in the name!
-PUBLISHER_NAME = os.getenv("PUBLISHER", "DMP - FREE MUSIC CATALOGUE SOFTWARE")
+PUBLISHER_NAME = os.getenv("PUBLISHER", "ADMIN PLATFORM")
 
 # CWR Delivery code, issued by collecting societies
 PUBLISHER_CODE = os.getenv("PUBLISHER_CODE", "000")
