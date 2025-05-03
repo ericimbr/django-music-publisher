@@ -18,7 +18,12 @@ SECRET_KEY = os.getenv("SECRET_KEY", None)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", False)
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+#
+# Only allow the Heroku app domain by default
+ALLOWED_HOSTS = os.getenv(
+    "ALLOWED_HOSTS",
+    "confessions-music-d336a69b197e.herokuapp.com"
+).split(",")
 
 INSTALLED_APPS = [
     "music_publisher.apps.MusicPublisherConfig",
@@ -117,13 +122,21 @@ LOGIN_URL = "/login/"
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = None
 
-CSRF_COOKIE_SECURE = not DEBUG
-SESSION_COOKIE_SECURE = not DEBUG
+#
+# Always secure CSRF cookie over HTTPS in production
+CSRF_COOKIE_SECURE = True
+# Always secure session cookie over HTTPS in production
+SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 0 if DEBUG else 300
 SECURE_HSTS_PRELOAD = not DEBUG
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # Honor SECURE_SSL_REDIRECT from env var (default False)
 SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', 'False').lower() in ('true', '1', 't')
+#
+# Trust CSRF tokens from the Heroku domain
+CSRF_TRUSTED_ORIGINS = [
+    "https://confessions-music-d336a69b197e.herokuapp.com",
+]
 
 # The name of the publisher. Use no comma in the name!
 PUBLISHER_NAME = os.getenv("PUBLISHER", "DMP - FREE MUSIC CATALOGUE SOFTWARE")
