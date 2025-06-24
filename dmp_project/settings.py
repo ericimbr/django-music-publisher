@@ -139,13 +139,13 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 # The name of the publisher. Use no comma in the name!
-PUBLISHER_NAME = os.getenv("CONFESSIONS", "ADMIN PLATFORM")
+PUBLISHER_NAME = os.getenv("CONFESSIONS MUSIC PUBLISHING", "ADMIN PLATFORM")
 
 # CWR Delivery code, issued by collecting societies
-PUBLISHER_CODE = os.getenv("PUBLISHER_CODE", "000")
+PUBLISHER_CODE = os.getenv("PUBLISHER_CODE", "CPU")
 
 # IPI Name # is required, issued by collecting societies
-PUBLISHER_IPI_NAME = os.getenv("PUBLISHER_IPI_NAME", "")
+PUBLISHER_IPI_NAME = os.getenv("PUBLISHER_IPI_NAME", "1254625261")
 # IPI Base # is rarely used, issued by collecting societies
 PUBLISHER_IPI_BASE = os.getenv("PUBLISHER_IPI_BASE", None)
 
@@ -153,8 +153,8 @@ PUBLISHER_IPI_BASE = os.getenv("PUBLISHER_IPI_BASE", None)
 # Numerical value as string without the leading zero:
 # '52' for PRS, '44' for MCPS, '10' for ASCAP, '34' for HFA. etc.
 # see  music_publisher/societies.csv
-PUBLISHER_SOCIETY_PR = os.getenv("PUBLISHER_SOCIETY_PR", None)
-PUBLISHER_SOCIETY_MR = os.getenv("PUBLISHER_SOCIETY_MR", None)
+PUBLISHER_SOCIETY_PR = os.getenv("PUBLISHER_SOCIETY_PR", 21)
+PUBLISHER_SOCIETY_MR = os.getenv("PUBLISHER_SOCIETY_MR", 44)
 PUBLISHER_SOCIETY_SR = os.getenv("PUBLISHER_SOCIETY_SR", None)
 
 # Shares transferred to the original publisher, default to 50%/100%/100%
